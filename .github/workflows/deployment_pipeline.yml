@@ -71,7 +71,7 @@ jobs:
           DEFAULT_BUMP: patch
         uses: anothrNick/github-tag-action@1.36.0
       - name: deploy success
-        if: ${{ success() }}
+        if: ${{ success() && github.event_name == 'push' && !contains(env.COMMIT_MESSAGES,'#skip' }}
         uses: rjstone/discord-webhook-notify@v1
         with:
           severity: info
