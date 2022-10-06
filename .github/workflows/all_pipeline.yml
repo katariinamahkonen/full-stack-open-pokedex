@@ -34,7 +34,7 @@ jobs:
         with:
           severity: error
           text: Tests failed
-          description: Recent PR ${{ github.event.pull_request.html_url }} broke some test.
+          description: Recent commit ${{ github.event.commits[0].url }} broke some test.
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: check commit messages
         env:
@@ -51,7 +51,7 @@ jobs:
         with:
           severity: error
           text: Deploy failed
-          description: Recent PR ${{ github.event.pull_request.html_url }} broke deploy.
+          description: Recent commit ${{ github.event.commits[0].url }} broke deploy.
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
   tag_release:
     needs: [deploy]
