@@ -1,4 +1,4 @@
-name: Heath check
+name: Health check
 
 on:
   schedule:
