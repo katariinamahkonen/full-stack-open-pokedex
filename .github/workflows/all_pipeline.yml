@@ -1,4 +1,4 @@
-name: Original pipeline
+name: Deployment pipeline
 
 on:
   push:
@@ -78,4 +78,3 @@ jobs:
           text: New version of poke-app deployed
           description:  at 'https://fullstackopen-pokeapp.fly.dev/'
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-          
